@@ -1,0 +1,21 @@
+{
+  "name": "UPMAP — Продвижение в картах",
+  "short_name": "UPMAP",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "description": "Профессиональное продвижение бизнеса в Яндекс Картах, 2ГИС и Google Maps.",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

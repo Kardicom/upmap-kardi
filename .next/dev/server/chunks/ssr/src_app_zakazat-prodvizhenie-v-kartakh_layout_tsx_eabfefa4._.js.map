@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Projectreact/upmap-nextjs/src/app/zakazat-prodvizhenie-v-kartakh/layout.tsx"],"sourcesContent":["import { Metadata } from 'next';\r\n\r\nexport const metadata: Metadata = {\r\n  title: 'Контакты UPMAP — продвижение в Яндекс.Картах, 2ГИС',\r\n  description: 'Свяжитесь с командой UPMAP для бесплатного аудита и консультации по продвижению вашего бизнеса в Яндекс.Картах, 2ГИС и Google.',\r\n};\r\n\r\nexport default function ContactsLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return children;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,eAAe,EACrC,QAAQ,EAGT;IACC,OAAO;AACT","debugId":null}}]
+}

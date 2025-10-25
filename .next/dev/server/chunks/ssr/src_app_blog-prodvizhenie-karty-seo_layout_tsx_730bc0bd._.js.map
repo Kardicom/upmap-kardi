@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Projectreact/upmap-nextjs/src/app/blog-prodvizhenie-karty-seo/layout.tsx"],"sourcesContent":["import { Metadata } from 'next';\r\n\r\nexport const metadata: Metadata = {\r\n  title: 'Блог о продвижении в Яндекс.Картах, 2ГИС | UPMAP',\r\n  description: 'Экспертные статьи о продвижении в Яндекс.Картах, 2ГИС и Google: SEO, отзывы, локальная реклама, кейсы и советы от профессионалов UPMAP.',\r\n  keywords: 'блог продвижение яндекс карты, seo карты, локальное продвижение статьи, 2гис продвижение, отзывы яндекс',\r\n  openGraph: {\r\n    title: 'Блог о продвижении в Яндекс.Картах, 2ГИС | UPMAP',\r\n    description: 'Экспертные статьи о продвижении в Яндекс.Картах, 2ГИС и Google',\r\n    type: 'website',\r\n  }\r\n};\r\n\r\nexport default function BlogLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return children;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;IACb,UAAU;IACV,WAAW;QACT,OAAO;QACP,aAAa;QACb,MAAM;IACR;AACF;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,OAAO;AACT","debugId":null}}]
+}
