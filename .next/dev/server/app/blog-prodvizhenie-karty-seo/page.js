@@ -1,6 +1,6 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/blog-prodvizhenie-karty-seo/page.js")
-R.c("server/chunks/ssr/node_modules_next_dist_3763c3df._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__f94def69._.js")
+R.c("server/chunks/ssr/node_modules_5acbf261._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__f1bd3c2f._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_b704424f._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__7f148858._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_ece394eb.js")

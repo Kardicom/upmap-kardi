@@ -71,8 +71,12 @@ export default async function ArticlePage({
       </div>
 
       {/* Article Header */}
-      <section className="py-12 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4" style={{ maxWidth: '1440px' }}>
+      <section className="py-16 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white relative">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-slate-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10" style={{ maxWidth: '1440px' }}>
           <div className="max-w-4xl mx-auto">
             <Link 
               href="/blog-prodvizhenie-karty-seo"
@@ -110,52 +114,50 @@ export default async function ArticlePage({
       </section>
 
       {/* Article Content */}
-      <article className="py-16">
+      <article className="py-16 bg-white">
         <div className="container mx-auto px-4" style={{ maxWidth: '1440px' }}>
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg prose-blue max-w-none
-              prose-headings:font-bold 
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gray-900
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-gray-800
-              prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-              prose-strong:text-gray-900 prose-strong:font-semibold
-              prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-              prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-              prose-li:text-gray-700 prose-li:mb-2
-              prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
-              prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700
-              prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded 
-              prose-code:text-sm prose-code:text-gray-800
-              prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg
-              prose-img:rounded-lg prose-img:shadow-lg
-            ">
-              <MDXRemote 
-                source={article.content}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm],
-                    rehypePlugins: [rehypeHighlight],
-                  },
-                }}
-              />
-            </div>
+          <div className="prose prose-lg max-w-none
+            prose-headings:font-bold 
+            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gray-900
+            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-gray-800
+            prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+            prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-gray-900 prose-strong:font-semibold
+            prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+            prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+            prose-li:text-gray-700 prose-li:mb-2
+            prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
+            prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700
+            prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded 
+            prose-code:text-sm prose-code:text-gray-800
+            prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg
+            prose-img:rounded-lg prose-img:shadow-lg
+          ">
+            <MDXRemote 
+              source={article.content}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [rehypeHighlight],
+                },
+              }}
+            />
+          </div>
 
-            {/* CTA */}
-            <div className="mt-16 p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Готовы начать продвижение?
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Получите бесплатный аудит вашей карточки в Яндекс.Картах и персональную стратегию продвижения
-              </p>
-              <Link
-                href="/zakazat-prodvizhenie-v-kartakh"
-                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Получить бесплатный аудит
-              </Link>
-            </div>
+          {/* CTA */}
+          <div className="mt-16 p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Готовы начать продвижение?
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Получите бесплатный аудит вашей карточки в Яндекс.Картах и персональную стратегию продвижения
+            </p>
+            <Link
+              href="/zakazat-prodvizhenie-v-kartakh"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Получить бесплатный аудит
+            </Link>
           </div>
         </div>
       </article>

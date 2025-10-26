@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   verification: {
     yandex: '2f5eed8d0194be21',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -25,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="canonical" href="https://upmap.ru/" />
         <meta name="theme-color" content="#f59e0b" />
       </head>

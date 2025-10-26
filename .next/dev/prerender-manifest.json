@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "ccc54360ff815bc3162c4601d32bdad5",
-    "previewModeSigningKey": "79540ae0294cd6b2e82986e1a75448564d31d5274d10f79a1e44d7ee87fc5f2a",
-    "previewModeEncryptionKey": "7a278274ee34f86f7bf6d06255f654738e27fc0c7964a93eb2db584caf509071"
-  }
-}
+{"version":4,"routes":{"/blog-prodvizhenie-karty-seo/1":{},"/blog-prodvizhenie-karty-seo/kak-udalit-otzyv-na-yandeks-kartah":{},"/blog-prodvizhenie-karty-seo/otzyvy-na-yandeks-kartah-polnoe-rukovodstvo":{},"/blog-prodvizhenie-karty-seo/prodvizhenie-v-yandex-kartah-2025":{}},"dynamicRoutes":{"/blog-prodvizhenie-karty-seo/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog-prodvizhenie-karty-seo/[slug]","routeRegex":"^\\/blog\\-prodvizhenie\\-karty\\-seo\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"935fc282b1af8db081ed2e2f637b87a0","previewModeSigningKey":"a62a0fd4a977b6b6afc05b549577d58f6dcc944e9973739151bf7dafbd925d29","previewModeEncryptionKey":"39c9fb39b1b5efd4bc9976fcff02f5e33010a0bb5dd83bd21dfdf1e7208fff3f"}}

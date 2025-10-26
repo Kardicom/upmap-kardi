@@ -1,6 +1,6 @@
 {
+  "/blog-prodvizhenie-karty-seo/[slug]/page": "app/blog-prodvizhenie-karty-seo/[slug]/page.js",
   "/blog-prodvizhenie-karty-seo/page": "app/blog-prodvizhenie-karty-seo/page.js",
-  "/kejsy-prodvizheniya-yandeks-karty/page": "app/kejsy-prodvizheniya-yandeks-karty/page.js",
   "/page": "app/page.js",
   "/tarify-prodvizheniya-v-kartakh/page": "app/tarify-prodvizheniya-v-kartakh/page.js",
   "/uslugi-prodvizheniya-v-kartakh/page": "app/uslugi-prodvizheniya-v-kartakh/page.js",
