@@ -13,10 +13,11 @@ export interface ArticleMetadata {
   category: string;
   keywords: string[];
   coverImage: string;
+  faqSchema?: string;
 }
 
 export interface Article extends ArticleMetadata {
-  content: string;
+  content: string | any; // Может быть строкой (MDX) или объектом (TinaCMS rich-text)
 }
 
 // Получить все статьи
@@ -30,8 +31,15 @@ export function getAllArticles(): Article[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
 
+      // Проверяем, есть ли body в TinaCMS формате (rich-text)
+      let finalContent = content;
+      if (data.body) {
+        // Если body - это объект (TinaCMS rich-text), используем его напрямую
+        finalContent = data.body;
+      }
+
       return {
-        content,
+        content: finalContent,
         ...(data as ArticleMetadata),
         slug,
       };
@@ -50,8 +58,15 @@ export function getArticleBySlug(slug: string): Article | null {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
+    // Проверяем, есть ли body в TinaCMS формате (rich-text)
+    let finalContent = content;
+    if (data.body) {
+      // Если body - это объект (TinaCMS rich-text), используем его напрямую
+      finalContent = data.body;
+    }
+
     return {
-      content,
+      content: finalContent,
       ...(data as ArticleMetadata),
       slug,
     };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { MapPin, Eye, TrendingUp, Star, ChevronDown, Calendar, User, ArrowRight } from 'lucide-react';
 import { useOrderModal } from '@/contexts/OrderModalContext';
 import Link from 'next/link';
@@ -160,6 +160,7 @@ const FAQSection = () => {
 
 const BlogPageClient = ({ articles }: BlogPageClientProps) => {
   const { openModal: openOrderModal } = useOrderModal();
+  const [selectedCategory, setSelectedCategory] = useState<string>('Все темы');
   
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -169,6 +170,18 @@ const BlogPageClient = ({ articles }: BlogPageClientProps) => {
       day: 'numeric' 
     });
   };
+
+  const categories = useMemo(() => {
+    const unique = Array.from(new Set(articles.map((article) => article.category).filter(Boolean)));
+    return ['Все темы', ...unique];
+  }, [articles]);
+
+  const filteredArticles = useMemo(() => {
+    if (selectedCategory === 'Все темы') {
+      return articles;
+    }
+    return articles.filter((article) => article.category === selectedCategory);
+  }, [articles, selectedCategory]);
   
   return (
     <div className="pt-20">
@@ -216,8 +229,30 @@ const BlogPageClient = ({ articles }: BlogPageClientProps) => {
             </p>
           </div>
 
+          {categories.length > 1 && (
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+              {categories.map((category) => {
+                const isActive = category === selectedCategory;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                      isActive
+                        ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/20'
+                        : 'bg-white text-gray-700 border-gray-200 hover:border-blue-300 hover:text-blue-600'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
+            {filteredArticles.map((article) => (
               <Link 
                 key={article.slug} 
                 href={`/blog-prodvizhenie-karty-seo/${article.slug}`}
@@ -263,9 +298,9 @@ const BlogPageClient = ({ articles }: BlogPageClientProps) => {
             ))}
           </div>
 
-          {articles.length === 0 && (
+          {filteredArticles.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-2xl text-gray-500">Статьи скоро появятся...</p>
+              <p className="text-2xl text-gray-500">Материалы в этой категории появятся позже.</p>
             </div>
           )}
         </div>

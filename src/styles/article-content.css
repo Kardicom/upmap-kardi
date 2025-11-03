@@ -1,0 +1,149 @@
+/* Стили для контента статей (TinaCMS и обычный MDX) */
+
+.article-content {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-content h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.article-content h2 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.article-content h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.article-content p {
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.article-content a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.article-content a:hover {
+  text-decoration: underline;
+}
+
+.article-content strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.article-content em {
+  font-style: italic;
+}
+
+.article-content ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.article-content ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.article-content blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #374151;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-family: 'Courier New', monospace;
+}
+
+.article-content pre {
+  background-color: #111827;
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.article-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #ffffff;
+}
+
+.article-content img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: #d1d5db;
+}
+
+.article-content table {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.article-content th {
+  background-color: #f3f4f6;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+}
+
+.article-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+}

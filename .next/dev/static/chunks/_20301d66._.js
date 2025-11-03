@@ -325,6 +325,7 @@ _c = FAQSection;
 const BlogPageClient = ({ articles })=>{
     _s1();
     const { openModal: openOrderModal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModalContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useOrderModal"])();
+    const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('Все темы');
     const formatDate = (dateString)=>{
         const date = new Date(dateString);
         return date.toLocaleDateString('ru-RU', {
@@ -333,6 +334,32 @@ const BlogPageClient = ({ articles })=>{
             day: 'numeric'
         });
     };
+    const categories = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "BlogPageClient.useMemo[categories]": ()=>{
+            const unique = Array.from(new Set(articles.map({
+                "BlogPageClient.useMemo[categories].unique": (article)=>article.category
+            }["BlogPageClient.useMemo[categories].unique"]).filter(Boolean)));
+            return [
+                'Все темы',
+                ...unique
+            ];
+        }
+    }["BlogPageClient.useMemo[categories]"], [
+        articles
+    ]);
+    const filteredArticles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "BlogPageClient.useMemo[filteredArticles]": ()=>{
+            if (selectedCategory === 'Все темы') {
+                return articles;
+            }
+            return articles.filter({
+                "BlogPageClient.useMemo[filteredArticles]": (article)=>article.category === selectedCategory
+            }["BlogPageClient.useMemo[filteredArticles]"]);
+        }
+    }["BlogPageClient.useMemo[filteredArticles]"], [
+        articles,
+        selectedCategory
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "pt-20",
         children: [
@@ -346,77 +373,77 @@ const BlogPageClient = ({ articles })=>{
                                 className: "absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 178,
+                                lineNumber: 191,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-20 right-20 w-24 h-24 bg-slate-400 rounded-full blur-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 179,
+                                lineNumber: 192,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-1/2 left-1/2 w-40 h-40 bg-indigo-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 180,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-16 left-16 w-4 h-4 bg-blue-300 rounded-full opacity-60"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 182,
+                                lineNumber: 195,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-16 right-16 w-3 h-3 bg-slate-300 rounded-full opacity-50"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 183,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-16 left-16 w-3 h-3 bg-indigo-300 rounded-full opacity-70"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 184,
+                                lineNumber: 197,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-16 right-16 w-4 h-4 bg-blue-200 rounded-full opacity-55"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 185,
+                                lineNumber: 198,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-1/3 left-1/4 w-2 h-2 bg-slate-200 rounded-full opacity-60"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 186,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-1/3 right-1/4 w-3 h-3 bg-indigo-200 rounded-full opacity-50"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 187,
+                                lineNumber: 200,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-1/4 right-1/3 w-2 h-2 bg-blue-300 rounded-full opacity-65"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 188,
+                                lineNumber: 201,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-1/4 left-1/3 w-3 h-3 bg-slate-300 rounded-full opacity-55"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 189,
+                                lineNumber: 202,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -432,7 +459,7 @@ const BlogPageClient = ({ articles })=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 205,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -444,7 +471,7 @@ const BlogPageClient = ({ articles })=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 206,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -456,7 +483,7 @@ const BlogPageClient = ({ articles })=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 207,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -468,7 +495,7 @@ const BlogPageClient = ({ articles })=>{
                                         strokeWidth: "1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 208,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -480,19 +507,19 @@ const BlogPageClient = ({ articles })=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 209,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 191,
+                                lineNumber: 204,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                        lineNumber: 177,
+                        lineNumber: 190,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -508,7 +535,7 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Блог нашей команды"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 214,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -516,24 +543,24 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Экспертные статьи о продвижении в картах и локальном SEO"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 200,
+                            lineNumber: 213,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                        lineNumber: 199,
+                        lineNumber: 212,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 176,
+                lineNumber: 189,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -552,7 +579,7 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Последние статьи"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 226,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -560,18 +587,38 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Практические руководства, кейсы и аналитика от экспертов UPMAP"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 227,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 212,
+                            lineNumber: 225,
                             columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        categories.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap items-center justify-center gap-3 mb-12",
+                            children: categories.map((category)=>{
+                                const isActive = category === selectedCategory;
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    onClick: ()=>setSelectedCategory(category),
+                                    className: `px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isActive ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/20' : 'bg-white text-gray-700 border-gray-200 hover:border-blue-300 hover:text-blue-600'}`,
+                                    children: category
+                                }, category, false, {
+                                    fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
+                                    lineNumber: 237,
+                                    columnNumber: 19
+                                }, ("TURBOPACK compile-time value", void 0));
+                            })
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
+                            lineNumber: 233,
+                            columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-                            children: articles.map((article)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            children: filteredArticles.map((article)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: `/blog-prodvizhenie-karty-seo/${article.slug}`,
                                     className: "group",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -584,12 +631,12 @@ const BlogPageClient = ({ articles })=>{
                                                     children: article.category
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 264,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 228,
+                                                lineNumber: 263,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -600,7 +647,7 @@ const BlogPageClient = ({ articles })=>{
                                                         children: article.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 271,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -608,7 +655,7 @@ const BlogPageClient = ({ articles })=>{
                                                         children: article.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 274,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -621,20 +668,20 @@ const BlogPageClient = ({ articles })=>{
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                        lineNumber: 246,
+                                                                        lineNumber: 281,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: formatDate(article.date)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                        lineNumber: 247,
+                                                                        lineNumber: 282,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                lineNumber: 245,
+                                                                lineNumber: 280,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -644,26 +691,26 @@ const BlogPageClient = ({ articles })=>{
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                        lineNumber: 250,
+                                                                        lineNumber: 285,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: article.author
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                        lineNumber: 251,
+                                                                        lineNumber: 286,
                                                                         columnNumber: 25
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                lineNumber: 249,
+                                                                lineNumber: 284,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 279,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -673,68 +720,68 @@ const BlogPageClient = ({ articles })=>{
                                                                 children: "Читать статью"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                lineNumber: 257,
+                                                                lineNumber: 292,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                                 className: "w-5 h-5 group-hover:translate-x-1 transition-transform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                                lineNumber: 258,
+                                                                lineNumber: 293,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                        lineNumber: 256,
+                                                        lineNumber: 291,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 270,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                        lineNumber: 226,
+                                        lineNumber: 261,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, article.slug, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 221,
+                                    lineNumber: 256,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 219,
+                            lineNumber: 254,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
-                        articles.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        filteredArticles.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-center py-20",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-2xl text-gray-500",
-                                children: "Статьи скоро появятся..."
+                                children: "Материалы в этой категории появятся позже."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                lineNumber: 268,
+                                lineNumber: 303,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 267,
+                            lineNumber: 302,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                    lineNumber: 211,
+                    lineNumber: 224,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 210,
+                lineNumber: 223,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -753,7 +800,7 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Общая статистика результатов"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 278,
+                                    lineNumber: 313,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -761,13 +808,13 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Средние показатели улучшений по всем проектам"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 279,
+                                    lineNumber: 314,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 277,
+                            lineNumber: 312,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -782,12 +829,12 @@ const BlogPageClient = ({ articles })=>{
                                                 className: "w-10 h-10 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 287,
+                                                lineNumber: 322,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 286,
+                                            lineNumber: 321,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -795,7 +842,7 @@ const BlogPageClient = ({ articles })=>{
                                             children: "+280%"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 289,
+                                            lineNumber: 324,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -803,13 +850,13 @@ const BlogPageClient = ({ articles })=>{
                                             children: "Рост звонков в среднем"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 290,
+                                            lineNumber: 325,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 285,
+                                    lineNumber: 320,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -821,12 +868,12 @@ const BlogPageClient = ({ articles })=>{
                                                 className: "w-10 h-10 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 294,
+                                                lineNumber: 329,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 293,
+                                            lineNumber: 328,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -834,7 +881,7 @@ const BlogPageClient = ({ articles })=>{
                                             children: "4.9"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 296,
+                                            lineNumber: 331,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -842,13 +889,13 @@ const BlogPageClient = ({ articles })=>{
                                             children: "Средний рейтинг после работы"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 297,
+                                            lineNumber: 332,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 292,
+                                    lineNumber: 327,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -860,12 +907,12 @@ const BlogPageClient = ({ articles })=>{
                                                 className: "w-10 h-10 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 301,
+                                                lineNumber: 336,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 300,
+                                            lineNumber: 335,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -873,7 +920,7 @@ const BlogPageClient = ({ articles })=>{
                                             children: "+158%"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 303,
+                                            lineNumber: 338,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -881,13 +928,13 @@ const BlogPageClient = ({ articles })=>{
                                             children: "Увеличение просмотров"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 339,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 299,
+                                    lineNumber: 334,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -899,12 +946,12 @@ const BlogPageClient = ({ articles })=>{
                                                 className: "w-10 h-10 text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                                lineNumber: 308,
+                                                lineNumber: 343,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 342,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -912,7 +959,7 @@ const BlogPageClient = ({ articles })=>{
                                             children: "ТОП-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 345,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -920,42 +967,42 @@ const BlogPageClient = ({ articles })=>{
                                             children: "Позиции в картах"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                            lineNumber: 311,
+                                            lineNumber: 346,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 306,
+                                    lineNumber: 341,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 284,
+                            lineNumber: 319,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                    lineNumber: 276,
+                    lineNumber: 311,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 275,
+                lineNumber: 310,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "bg-gray-900",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FAQSection, {}, void 0, false, {
                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                    lineNumber: 319,
+                    lineNumber: 354,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 318,
+                lineNumber: 353,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -964,12 +1011,12 @@ const BlogPageClient = ({ articles })=>{
                     className: "h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"
                 }, void 0, false, {
                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                    lineNumber: 323,
+                    lineNumber: 358,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 322,
+                lineNumber: 357,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -985,7 +1032,7 @@ const BlogPageClient = ({ articles })=>{
                             children: "Готовы увеличить поток клиентов?"
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 329,
+                            lineNumber: 364,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -993,7 +1040,7 @@ const BlogPageClient = ({ articles })=>{
                             children: "Получите бесплатный аудит вашего присутствия в картах и персональную стратегию продвижения"
                         }, void 0, false, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 332,
+                            lineNumber: 367,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1005,7 +1052,7 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Получить аудит бесплатно"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 336,
+                                    lineNumber: 371,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1014,24 +1061,24 @@ const BlogPageClient = ({ articles })=>{
                                     children: "Позвонить сейчас"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                                    lineNumber: 342,
+                                    lineNumber: 377,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                            lineNumber: 335,
+                            lineNumber: 370,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                    lineNumber: 328,
+                    lineNumber: 363,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 327,
+                lineNumber: 362,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1041,30 +1088,30 @@ const BlogPageClient = ({ articles })=>{
                         className: "h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                        lineNumber: 353,
+                        lineNumber: 388,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-4 bg-gradient-to-b from-gray-900 to-slate-900"
                     }, void 0, false, {
                         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                        lineNumber: 354,
+                        lineNumber: 389,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-                lineNumber: 352,
+                lineNumber: 387,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/blog-prodvizhenie-karty-seo/BlogPageClient.tsx",
-        lineNumber: 174,
+        lineNumber: 187,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s1(BlogPageClient, "FSkwaAhotmBGvzRZbJEg9jtp3KY=", false, function() {
+_s1(BlogPageClient, "IqM8UgIQNkuSAdkHu0hxFRA42kw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModalContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useOrderModal"]
     ];

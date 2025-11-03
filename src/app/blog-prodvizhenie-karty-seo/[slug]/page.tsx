@@ -1,11 +1,36 @@
 import { getAllArticles, getArticleBySlug } from '@/lib/articles';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
+import ArticleClient from '@/components/ArticleClient';
+import ArticleContentMDX from '@/components/ArticleContentMDX';
+import ScrollToAnchor from '@/components/ScrollToAnchor';
+import Script from 'next/script';
+
+const extractJsonLdContent = (raw?: string | null) => {
+  if (!raw) {
+    return null;
+  }
+
+  const trimmed = raw.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  const scriptMatch = trimmed.match(/<script[^>]*>([\s\S]*?)<\/script>/i);
+  const jsonCandidate = scriptMatch ? scriptMatch[1].trim() : trimmed;
+
+  if (!jsonCandidate) {
+    return null;
+  }
+
+  try {
+    return JSON.stringify(JSON.parse(jsonCandidate));
+  } catch (error) {
+    return jsonCandidate;
+  }
+};
 
 export async function generateStaticParams() {
   const articles = getAllArticles();
@@ -31,7 +56,7 @@ export async function generateMetadata({
   return {
     title: `${article.title} | UPMAP`,
     description: article.description,
-    keywords: article.keywords.join(', '),
+    keywords: article.keywords?.join(', ') || '',
     openGraph: {
       title: article.title,
       description: article.description,
@@ -55,18 +80,45 @@ export default async function ArticlePage({
     notFound();
   }
 
+  // Проверяем, TinaCMS контент или обычный MDX
+  const isTinaContent = typeof article.content === 'object' && article.content !== null;
+  const faqJsonLd = extractJsonLdContent(article.faqSchema);
+  const articleJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    author: {
+      '@type': 'Organization',
+      name: article.author,
+    },
+    datePublished: article.date,
+    image: article.coverImage,
+    publisher: {
+      '@type': 'Organization',
+      name: 'UPMAP',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://upmap.ru/logo.png',
+      },
+    },
+  });
+
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <ScrollToAnchor />
       {/* Breadcrumbs */}
       <div className="bg-gray-50 border-b">
         <div className="container mx-auto px-4 py-4" style={{ maxWidth: '1440px' }}>
-          <nav className="flex items-center text-sm text-gray-600">
-            <Link href="/" className="hover:text-blue-600">Главная</Link>
-            <span className="mx-2">/</span>
-            <Link href="/blog-prodvizhenie-karty-seo" className="hover:text-blue-600">Блог</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900">{article.title}</span>
-          </nav>
+          <div className="max-w-4xl mx-auto">
+            <nav className="flex items-center text-sm text-gray-600">
+              <Link href="/" className="hover:text-blue-600">Главная</Link>
+              <span className="mx-2">/</span>
+              <Link href="/blog-prodvizhenie-karty-seo" className="hover:text-blue-600">Блог</Link>
+              <span className="mx-2">/</span>
+              <span className="text-gray-900">{article.title}</span>
+            </nav>
+          </div>
         </div>
       </div>
 
@@ -85,11 +137,9 @@ export default async function ArticlePage({
               <ArrowLeft className="w-4 h-4 mr-2" />
               Вернуться к блогу
             </Link>
-            
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {article.title}
             </h1>
-            
             <div className="flex flex-wrap items-center gap-6 text-blue-100">
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
@@ -113,81 +163,25 @@ export default async function ArticlePage({
         </div>
       </section>
 
-      {/* Article Content */}
+      {/* Article Content + CTA */}
       <article className="py-16 bg-white">
         <div className="container mx-auto px-4" style={{ maxWidth: '1440px' }}>
-          <div className="prose prose-lg max-w-none
-            prose-headings:font-bold 
-            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gray-900
-            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-gray-800
-            prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-            prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-gray-900 prose-strong:font-semibold
-            prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-            prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-            prose-li:text-gray-700 prose-li:mb-2
-            prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
-            prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700
-            prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded 
-            prose-code:text-sm prose-code:text-gray-800
-            prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-lg
-            prose-img:rounded-lg prose-img:shadow-lg
-          ">
-            <MDXRemote 
-              source={article.content}
-              options={{
-                mdxOptions: {
-                  remarkPlugins: [remarkGfm],
-                  rehypePlugins: [rehypeHighlight],
-                },
-              }}
-            />
-          </div>
-
-          {/* CTA */}
-          <div className="mt-16 p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Готовы начать продвижение?
-            </h3>
-            <p className="text-gray-700 mb-6">
-              Получите бесплатный аудит вашей карточки в Яндекс.Картах и персональную стратегию продвижения
-            </p>
-            <Link
-              href="/zakazat-prodvizhenie-v-kartakh"
-              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-            >
-              Получить бесплатный аудит
-            </Link>
-          </div>
+          <ArticleClient 
+            article={article}
+            mdxContent={!isTinaContent ? <ArticleContentMDX content={article.content} /> : undefined}
+          />
         </div>
       </article>
 
       {/* Schema.org */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: article.title,
-            description: article.description,
-            author: {
-              '@type': 'Organization',
-              name: article.author,
-            },
-            datePublished: article.date,
-            image: article.coverImage,
-            publisher: {
-              '@type': 'Organization',
-              name: 'UPMAP',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://upmap.ru/logo.png',
-              },
-            },
-          }),
-        }}
-      />
+      <Script id={`article-schema-${slug}`} type="application/ld+json" strategy="beforeInteractive">
+        {articleJsonLd}
+      </Script>
+      {faqJsonLd && (
+        <Script id={`faq-schema-${slug}`} type="application/ld+json" strategy="beforeInteractive">
+          {faqJsonLd}
+        </Script>
+      )}
     </div>
   );
 }

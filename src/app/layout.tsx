@@ -1,4 +1,5 @@
 import './globals.css'
+import '../styles/article-content.css'
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ru">
+    <html lang="ru" data-scroll-behavior="smooth">
       <head>
         <link rel="canonical" href="https://upmap.ru/" />
         <meta name="theme-color" content="#f59e0b" />
