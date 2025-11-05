@@ -4,5 +4,5 @@
   "/kejsy-prodvizheniya-yandeks-karty/page": "app/kejsy-prodvizheniya-yandeks-karty/page.js",
   "/page": "app/page.js",
   "/tarify-prodvizheniya-v-kartakh/page": "app/tarify-prodvizheniya-v-kartakh/page.js",
-  "/uslugi-prodvizheniya-v-kartakh/page": "app/uslugi-prodvizheniya-v-kartakh/page.js"
+  "/zakazat-prodvizhenie-v-kartakh/page": "app/zakazat-prodvizhenie-v-kartakh/page.js"
 }

@@ -67,7 +67,7 @@ export default defineConfig({
             name: "category",
             label: "Категория",
             required: true,
-            options: ["Отзывы", "SEO", "Продвижение", "Аналитика", "Новости"],
+            options: ["Отзывы", "SEO", "Продвижение", "Аналитика", "Новости", "Кейсы"],
           },
           {
             type: "string",
