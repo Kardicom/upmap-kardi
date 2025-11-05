@@ -139,7 +139,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Project-specific
-admin
+public/admin
 tina/__generated__
 *.local
 
