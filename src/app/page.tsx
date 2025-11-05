@@ -61,8 +61,8 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-            <img
-              src="https://upmap.ru/images/mini/phone.webp"
+            <img 
+              src="/images/mini/phone.webp"
               alt="Команда UPMAP"
               className="hidden sm:block w-full max-w-full object-contain"
               style={{ maxHeight: '45rem', display: 'block', margin: '0 auto' }}
@@ -119,7 +119,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <img 
-                src="https://upmap.ru/images/laserlove/laserlove3.webp" 
+                src="/images/laserlove/laserlove3.webp" 
                 alt="Косметология, салон красоты" 
                 className="w-full h-48 object-cover"
               />
@@ -134,7 +134,7 @@ export default function HomePage() {
             </div>
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <img 
-                src="https://upmap.ru/images/ygbyyg/ygbyyg3.webp" 
+                src="/images/ygbyyg/ygbyyg3.webp" 
                 alt="Салон красоты" 
                 className="w-full h-48 object-cover"
               />
@@ -149,7 +149,7 @@ export default function HomePage() {
             </div>
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <img 
-                src="https://upmap.ru/images/vpiterepet/vpiterepet3.webp" 
+                src="/images/vpiterepet/vpiterepet3.webp" 
                 alt="Караоке клуб" 
                 className="w-full h-48 object-cover"
               />
@@ -191,7 +191,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div className="bg-slate-700/50 backdrop-blur-md rounded-2xl p-10 border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300 text-center">
               <div className="w-16 h-16 mx-auto mb-6 rounded-xl flex items-center justify-center overflow-hidden">
-                <img src="https://upmap.ru/images/mini/gerb.png" alt="Реестр ПО" className="w-full h-full object-contain" />
+                <img src="/images/mini/gerb.png" alt="Реестр ПО" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-white">Состоит в реестре российского ПО</h3>
               <p className="text-slate-300 text-base">Сертифицированное решение для локального продвижения</p>
@@ -205,14 +205,14 @@ export default function HomePage() {
             </div>
             <div className="bg-slate-700/50 backdrop-blur-md rounded-2xl p-10 border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300 text-center">
               <div className="w-16 h-16 mx-auto mb-6 rounded-xl flex items-center justify-center overflow-hidden">
-                <img src="https://upmap.ru/images/mini/sk.png" alt="Сколково" className="w-full h-full object-contain" />
+                <img src="/images/mini/sk.png" alt="Сколково" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-green-400">При поддержке Сколково</h3>
               <p className="text-slate-300 text-base">Резидент инновационного центра</p>
             </div>
             <div className="bg-slate-700/50 backdrop-blur-md rounded-2xl p-10 border border-slate-600/50 hover:bg-slate-700/70 transition-all duration-300 text-center">
               <div className="w-32 h-16 mx-auto rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="https://upmap.ru/images/mini/it.png" alt="Минцифры" className="w-full h-full object-contain m-0 p-0" style={{maxWidth:'100%',maxHeight:'100%'}} />
+                <img src="/images/mini/it.png" alt="Минцифры" className="w-full h-full object-contain m-0 p-0" style={{maxWidth:'100%',maxHeight:'100%'}} />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-purple-400">Минцифры</h3>
               <p className="text-slate-300 text-base">Аккредитованы и входят в реестр «Минцифры»</p>
@@ -259,8 +259,8 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div className="bg-white rounded-3xl p-12 shadow-xl text-center hover:shadow-2xl transition-all border border-slate-100 flex flex-col items-center group">
-                <img
-                  src="https://upmap.ru/images/mini/dk.webp"
+                <img 
+                  src="/images/mini/dk.webp"
                   alt="Дамир Карамов"
                   className="w-32 h-32 rounded-full mb-8 object-cover shadow-lg group-hover:scale-105 transition-transform border border-slate-200"
                 />
@@ -378,8 +378,8 @@ export default function HomePage() {
               </div>
             </div>
             
-            <img
-              src="https://upmap.ru/images/mini/arrow.webp"
+            <img 
+              src="/images/mini/arrow.webp"
               alt="Команда UPMAP за работой"
               className="hidden lg:block w-full max-w-full object-contain"
               style={{ maxHeight: '32rem', display: 'block', margin: '0 auto' }}
