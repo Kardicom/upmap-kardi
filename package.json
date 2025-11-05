@@ -4,7 +4,7 @@
   "description": "UPMAP - Продвижение в Яндекс Картах (Next.js)",
   "scripts": {
     "dev": "set TINA_PUBLIC_IS_LOCAL=true && tinacms dev -c \"next dev\"",
-    "build": "next build",
+    "build": "next build --no-turbopack",
     "build:tina": "tinacms build && next build",
     "start": "next start",
     "lint": "next lint"
