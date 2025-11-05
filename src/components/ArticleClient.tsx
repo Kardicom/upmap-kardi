@@ -3,7 +3,6 @@
 import React from "react";
 import CtaBlock from "./CtaBlock";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import TableWithMenu from "./TableWithMenu";
 
 // Функция для создания ID из текста (якоря)
 const createSlug = (text: string) => {
@@ -69,7 +68,7 @@ const tinaComponents = {
   ),
   img: (props: any) => <img className="rounded-lg shadow-lg my-6" {...props} />,
   u: (props: any) => <u {...props} />, // Добавляем поддержку подчеркивания
-  table: (props: any) => <TableWithMenu {...props} />,
+  table: (props: any) => <table className="w-full border-collapse my-6" {...props} />,
   thead: (props: any) => <thead className="bg-slate-50" {...props} />,
   tbody: (props: any) => <tbody className="divide-y divide-slate-200" {...props} />,
   th: (props: any) => (

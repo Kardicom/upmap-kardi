@@ -2,7 +2,6 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import TableWithMenu from "./TableWithMenu";
 
 // Функция для создания ID из текста (якоря)
 const createSlug = (text: string) => {
@@ -68,7 +67,7 @@ const components = {
     <pre className="bg-gray-900 text-white p-6 rounded-lg my-6 overflow-x-auto" {...props} />
   ),
   img: (props: any) => <img className="rounded-lg shadow-lg my-6" {...props} />,
-  table: (props: any) => <TableWithMenu {...props} />,
+  table: (props: any) => <table className="w-full border-collapse my-6" {...props} />,
   thead: (props: any) => <thead className="bg-slate-50" {...props} />,
   tbody: (props: any) => <tbody className="divide-y divide-slate-200" {...props} />,
   th: (props: any) => (
