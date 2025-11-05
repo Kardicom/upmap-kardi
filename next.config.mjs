@@ -11,6 +11,11 @@ const nextConfig = {
       },
     ],
   },
+  // Отключаем статическую генерацию 404
+  skipTrailingSlashRedirect: true,
+  experimental: {
+    appDir: true,
+  },
 }
 
 const withMDX = createMDX({
