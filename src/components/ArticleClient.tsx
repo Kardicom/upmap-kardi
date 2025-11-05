@@ -68,14 +68,22 @@ const tinaComponents = {
   ),
   img: (props: any) => <img className="rounded-lg shadow-lg my-6" {...props} />,
   u: (props: any) => <u {...props} />, // Добавляем поддержку подчеркивания
-  table: (props: any) => <table className="w-full border-collapse my-6" {...props} />,
+  table: (props: any) => (
+    <div className="overflow-x-auto -mx-4 md:mx-0 my-6">
+      <div className="inline-block min-w-full align-middle">
+        <div className="overflow-hidden md:rounded-lg">
+          <table className="min-w-full border-collapse" {...props} />
+        </div>
+      </div>
+    </div>
+  ),
   thead: (props: any) => <thead className="bg-slate-50" {...props} />,
   tbody: (props: any) => <tbody className="divide-y divide-slate-200" {...props} />,
   th: (props: any) => (
-    <th className="border border-slate-200 px-4 py-3 text-left font-semibold text-slate-700" {...props} />
+    <th className="border border-slate-200 px-3 py-2 md:px-4 md:py-3 text-left font-semibold text-slate-700 text-sm md:text-base whitespace-nowrap" {...props} />
   ),
   td: (props: any) => (
-    <td className="border border-slate-200 px-4 py-3 text-slate-700 align-top" {...props} />
+    <td className="border border-slate-200 px-3 py-2 md:px-4 md:py-3 text-slate-700 align-top text-sm md:text-base" {...props} />
   ),
   tr: (props: any) => <tr className="odd:bg-white even:bg-slate-50" {...props} />,
   

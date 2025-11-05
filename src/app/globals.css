@@ -62,3 +62,100 @@ body {
     animation: none !important;
   }
 }
+
+/* Адаптивные таблицы в статьях */
+.article-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+}
+
+.article-content table thead {
+  background-color: rgb(248 250 252);
+}
+
+.article-content table th,
+.article-content table td {
+  border: 1px solid rgb(226 232 240);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-content table th {
+  font-weight: 600;
+  color: rgb(51 65 85);
+}
+
+.article-content table td {
+  color: rgb(71 85 105);
+}
+
+@media (max-width: 768px) {
+  .article-content table {
+    font-size: 0.875rem;
+  }
+  
+  .article-content table th,
+  .article-content table td {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+  }
+}
+
+/* Контейнер для таблицы с горизонтальным скроллом */
+.article-content > div:has(> table) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem -1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .article-content > div:has(> table) {
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+}
+
+/* Адаптивность для prose (MDX контента) */
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .prose {
+    font-size: 0.9375rem;
+  }
+  
+  .prose h1 {
+    font-size: 2rem;
+  }
+  
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+  
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+  
+  .prose table {
+    font-size: 0.875rem;
+  }
+  
+  .prose th,
+  .prose td {
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .prose img {
+    border-radius: 0.5rem;
+  }
+}
