@@ -7,8 +7,6 @@ import { useOrderModal } from '@/contexts/OrderModalContext';
 const ContactsPage = () => {
   const { openModal } = useOrderModal();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
     phone: '',
     business: '',
     service: '',
@@ -37,10 +35,8 @@ const ContactsPage = () => {
     // Формируем данные для web3forms
     const submitData = new FormData();
     submitData.append('access_key', 'ad5fc7d8-303d-4d87-8888-f6a09c767709');
-    submitData.append('name', formData.name);
-    submitData.append('email', formData.email);
     submitData.append('phone', formData.phone);
-    submitData.append('business', formData.business);
+    submitData.append('business', formData.business || 'Не указано');
     submitData.append('service', formData.service || 'Не выбрано');
     submitData.append('message', formData.message);
     submitData.append('subject', 'Заявка с формы Контакты UPMAP');
@@ -55,8 +51,6 @@ const ContactsPage = () => {
       if (!response.ok) throw new Error('Ошибка отправки');
       setIsSubmitted(true);
       setFormData({
-        name: '',
-        email: '',
         phone: '',
         business: '',
         service: '',
@@ -119,7 +113,7 @@ const ContactsPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Телефоны</h3>
-                    <p className="text-gray-600 mb-1">+7 (963) 500-63-21</p>
+                    <p className="text-gray-600 mb-1">+7 (993) 500-63-21</p>
                     <p className="text-gray-600 mb-1">+7 (912) 657-63-21</p>
                     <p className="text-sm text-gray-500">Звонки принимаем ежедневно с 9:00 до 21:00</p>
                   </div>
@@ -211,68 +205,33 @@ const ContactsPage = () => {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Ваше имя *
+                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                        Телефон *
                       </label>
                       <input
-                        type="text"
-                        id="name"
-                        name="name"
+                        type="tel"
+                        id="phone"
+                        name="phone"
                         required
-                        value={formData.name}
+                        value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="Как к вам обращаться?"
+                        placeholder="+7 (___) ___-__-__"
                       />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="Ваш email"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-                          Телефон *
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          required
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                          placeholder="+7 (___) ___-__-__"
-                        />
-                      </div>
                     </div>
 
                     <div>
                       <label htmlFor="business" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Название бизнеса *
+                        Название бизнеса
                       </label>
                       <input
                         type="text"
                         id="business"
                         name="business"
-                        required
                         value={formData.business}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="Название вашей компании"
+                        placeholder="Название вашей компании (необязательно)"
                       />
                     </div>
 
@@ -331,8 +290,8 @@ const ContactsPage = () => {
                     {agreeError && <p className="text-sm text-red-600 mb-2">{agreeError}</p>}
                     <button
                       type="submit"
-                      className={`w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center shadow-lg transition-opacity ${(!agree || !formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.business.trim()) ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700'}`}
-                      disabled={!(agree && formData.name.trim() && formData.email.trim() && formData.phone.trim() && formData.business.trim())}
+                      className={`w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center shadow-lg transition-opacity ${(!agree || !formData.phone.trim()) ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+                      disabled={!(agree && formData.phone.trim())}
                     >
                       <Send className="w-5 h-5 mr-2" />
                       Получить бесплатный аудит

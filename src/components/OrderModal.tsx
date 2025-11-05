@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { X, Phone, User, Building, CheckCircle, Package } from 'lucide-react';
+import { X, Phone, Building, CheckCircle, Package } from 'lucide-react';
 import { useOrderModal } from '../contexts/OrderModalContext';
 
 interface FormData {
   phone: string;
-  name: string;
   company: string;
 }
 
@@ -14,7 +13,6 @@ const OrderModal: React.FC = () => {
   const { isModalOpen, selectedTariff, closeModal } = useOrderModal();
   const [formData, setFormData] = useState<FormData>({
     phone: '',
-    name: '',
     company: ''
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -26,7 +24,7 @@ const OrderModal: React.FC = () => {
   useEffect(() => {
     if (!isModalOpen) {
       setShowSuccess(false);
-      setFormData({ phone: '', name: '', company: '' });
+      setFormData({ phone: '', company: '' });
       setErrors({});
     }
   }, [isModalOpen]);
@@ -40,22 +38,17 @@ const OrderModal: React.FC = () => {
       newErrors.phone = 'Введите корректный номер телефона';
     }
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Имя обязательно для заполнения';
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
   
   const sendToServer = async (data: FormData) => {
     const payload = {
-      name: data.name,
       phone: data.phone,
       company: data.company || 'Не указана',
       selectedPackage: selectedTariff || '',
       subject: `Новая заявка с сайта UPMAP${selectedTariff ? ` - ${selectedTariff}` : ''}`,
-      message: `Новая заявка с сайта UPMAP\nИмя: ${data.name}\nТелефон: ${data.phone}\nКомпания: ${data.company || 'Не указана'}${selectedTariff ? `\nПакет: ${selectedTariff}` : ''}\nДата: ${new Date().toLocaleString('ru-RU')}\nИсточник: Сайт UPMAP`
+      message: `Новая заявка с сайта UPMAP\nТелефон: ${data.phone}\nКомпания: ${data.company || 'Не указана'}${selectedTariff ? `\nПакет: ${selectedTariff}` : ''}\nДата: ${new Date().toLocaleString('ru-RU')}\nИсточник: Сайт UPMAP`
     };
     
     // TODO: Подключить реальный API
@@ -80,7 +73,7 @@ const OrderModal: React.FC = () => {
       setShowSuccess(true);
       
       setTimeout(() => {
-        setFormData({ phone: '', name: '', company: '' });
+        setFormData({ phone: '', company: '' });
         setErrors({});
         setShowSuccess(false);
         setAgree(false);
@@ -187,29 +180,6 @@ const OrderModal: React.FC = () => {
               </div>
 
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  <div className="flex items-center gap-2">
-                    <User size={16} />
-                    Имя клиента <span className="text-red-500">*</span>
-                  </div>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors ${
-                    errors.name ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                  }`}
-                  placeholder="Введите ваше имя"
-                  disabled={isSubmitting}
-                />
-                {errors.name && (
-                  <p className="mt-2 text-sm text-red-600">{errors.name}</p>
-                )}
-              </div>
-
-              <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                   <div className="flex items-center gap-2">
                     <Building size={16} />
@@ -260,11 +230,10 @@ const OrderModal: React.FC = () => {
                   disabled={
                     isSubmitting ||
                     !agree ||
-                    !formData.phone.trim() ||
-                    !formData.name.trim()
+                    !formData.phone.trim()
                   }
                   className={`flex-1 px-4 py-3 rounded-lg font-medium shadow-lg transition-opacity ${
-                    isSubmitting || !agree || !formData.phone.trim() || !formData.name.trim()
+                    isSubmitting || !agree || !formData.phone.trim()
                       ? 'bg-amber-500 text-white opacity-60 cursor-not-allowed'
                       : 'bg-amber-500 text-white hover:bg-amber-600'
                   }`}

@@ -25,8 +25,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModa
 const ContactsPage = ()=>{
     const { openModal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModalContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useOrderModal"])();
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        name: '',
-        email: '',
         phone: '',
         business: '',
         service: '',
@@ -52,10 +50,8 @@ const ContactsPage = ()=>{
         // Формируем данные для web3forms
         const submitData = new FormData();
         submitData.append('access_key', 'ad5fc7d8-303d-4d87-8888-f6a09c767709');
-        submitData.append('name', formData.name);
-        submitData.append('email', formData.email);
         submitData.append('phone', formData.phone);
-        submitData.append('business', formData.business);
+        submitData.append('business', formData.business || 'Не указано');
         submitData.append('service', formData.service || 'Не выбрано');
         submitData.append('message', formData.message);
         submitData.append('subject', 'Заявка с формы Контакты UPMAP');
@@ -69,8 +65,6 @@ const ContactsPage = ()=>{
             if (!response.ok) throw new Error('Ошибка отправки');
             setIsSubmitted(true);
             setFormData({
-                name: '',
-                email: '',
                 phone: '',
                 business: '',
                 service: '',
@@ -95,63 +89,63 @@ const ContactsPage = ()=>{
                                 className: "absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 78,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-20 right-20 w-24 h-24 bg-slate-400 rounded-full blur-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-1/2 left-1/2 w-40 h-40 bg-indigo-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 80,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-16 left-16 w-4 h-4 bg-blue-300 rounded-full opacity-60"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 83,
+                                lineNumber: 77,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-16 right-16 w-3 h-3 bg-slate-300 rounded-full opacity-50"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 84,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-16 left-16 w-3 h-3 bg-indigo-300 rounded-full opacity-70"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 85,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-16 right-16 w-4 h-4 bg-blue-200 rounded-full opacity-55"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 86,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute top-1/3 left-1/4 w-2 h-2 bg-slate-200 rounded-full opacity-60"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 87,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-1/3 right-1/4 w-3 h-3 bg-indigo-200 rounded-full opacity-50"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 88,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -167,7 +161,7 @@ const ContactsPage = ()=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -179,7 +173,7 @@ const ContactsPage = ()=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 87,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -191,19 +185,19 @@ const ContactsPage = ()=>{
                                         strokeWidth: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 91,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                        lineNumber: 76,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -219,7 +213,7 @@ const ContactsPage = ()=>{
                                     children: "Контакты"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -227,24 +221,24 @@ const ContactsPage = ()=>{
                                     children: "Получите бесплатный аудит вашего присутствия в картах и персональную стратегию продвижения"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 98,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                        lineNumber: 97,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 75,
+                lineNumber: 69,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -264,7 +258,7 @@ const ContactsPage = ()=>{
                                         children: "Как с нами связаться"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -279,12 +273,12 @@ const ContactsPage = ()=>{
                                                             className: "w-6 h-6 text-blue-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 118,
+                                                            lineNumber: 112,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 117,
+                                                        lineNumber: 111,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -294,15 +288,15 @@ const ContactsPage = ()=>{
                                                                 children: "Телефоны"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 121,
+                                                                lineNumber: 115,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-gray-600 mb-1",
-                                                                children: "+7 (963) 500-63-21"
+                                                                children: "+7 (993) 500-63-21"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 122,
+                                                                lineNumber: 116,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -310,7 +304,7 @@ const ContactsPage = ()=>{
                                                                 children: "+7 (912) 657-63-21"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 123,
+                                                                lineNumber: 117,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -318,19 +312,19 @@ const ContactsPage = ()=>{
                                                                 children: "Звонки принимаем ежедневно с 9:00 до 21:00"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 124,
+                                                                lineNumber: 118,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 114,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 110,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -342,12 +336,12 @@ const ContactsPage = ()=>{
                                                             className: "w-6 h-6 text-green-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 124,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 123,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -357,7 +351,7 @@ const ContactsPage = ()=>{
                                                                 children: "Электронная почта"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 133,
+                                                                lineNumber: 127,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -365,7 +359,7 @@ const ContactsPage = ()=>{
                                                                 children: "upmaps@mail.ru"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 134,
+                                                                lineNumber: 128,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -373,19 +367,19 @@ const ContactsPage = ()=>{
                                                                 children: "Отвечаем на письма в течение 1 часа"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 135,
+                                                                lineNumber: 129,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 126,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 122,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,12 +391,12 @@ const ContactsPage = ()=>{
                                                             className: "w-6 h-6 text-purple-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 135,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 140,
+                                                        lineNumber: 134,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -412,7 +406,7 @@ const ContactsPage = ()=>{
                                                                 children: "Мессенджеры"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 144,
+                                                                lineNumber: 138,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -420,7 +414,7 @@ const ContactsPage = ()=>{
                                                                 children: "Telegram: @Kardifx"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 145,
+                                                                lineNumber: 139,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -428,7 +422,7 @@ const ContactsPage = ()=>{
                                                                 children: "WhatsApp: +7 (912) 657-63-21"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 146,
+                                                                lineNumber: 140,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -436,19 +430,19 @@ const ContactsPage = ()=>{
                                                                 children: "Быстрая связь в любое время"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 147,
+                                                                lineNumber: 141,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 137,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 139,
+                                                lineNumber: 133,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -460,12 +454,12 @@ const ContactsPage = ()=>{
                                                             className: "w-6 h-6 text-orange-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 147,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 152,
+                                                        lineNumber: 146,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -475,7 +469,7 @@ const ContactsPage = ()=>{
                                                                 children: "География работы"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 156,
+                                                                lineNumber: 150,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -483,7 +477,7 @@ const ContactsPage = ()=>{
                                                                 children: "Вся территория России"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 157,
+                                                                lineNumber: 151,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -491,19 +485,19 @@ const ContactsPage = ()=>{
                                                                 children: "Работаем удаленно с любым регионом"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 158,
+                                                                lineNumber: 152,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 155,
+                                                        lineNumber: 149,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 151,
+                                                lineNumber: 145,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -515,12 +509,12 @@ const ContactsPage = ()=>{
                                                             className: "w-6 h-6 text-red-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 164,
+                                                            lineNumber: 158,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 163,
+                                                        lineNumber: 157,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -530,7 +524,7 @@ const ContactsPage = ()=>{
                                                                 children: "Режим работы"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 167,
+                                                                lineNumber: 161,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -538,7 +532,7 @@ const ContactsPage = ()=>{
                                                                 children: "Понедельник - Воскресенье: 9:00 - 21:00"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 168,
+                                                                lineNumber: 162,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -546,7 +540,7 @@ const ContactsPage = ()=>{
                                                                 children: "Техподдержка: 24/7"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 169,
+                                                                lineNumber: 163,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -554,25 +548,25 @@ const ContactsPage = ()=>{
                                                                 children: "Консультации в удобное для вас время"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 170,
+                                                                lineNumber: 164,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 160,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 156,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 109,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -583,7 +577,7 @@ const ContactsPage = ()=>{
                                                 children: "Что вы получите при обращении:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 171,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -596,7 +590,7 @@ const ContactsPage = ()=>{
                                                                 className: "w-5 h-5 text-green-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 180,
+                                                                lineNumber: 174,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -604,13 +598,13 @@ const ContactsPage = ()=>{
                                                                 children: "Бесплатный аудит присутствия в картах"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 181,
+                                                                lineNumber: 175,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 179,
+                                                        lineNumber: 173,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -620,7 +614,7 @@ const ContactsPage = ()=>{
                                                                 className: "w-5 h-5 text-green-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 184,
+                                                                lineNumber: 178,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -628,13 +622,13 @@ const ContactsPage = ()=>{
                                                                 children: "Анализ конкурентов в вашей нише"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 185,
+                                                                lineNumber: 179,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 177,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -644,7 +638,7 @@ const ContactsPage = ()=>{
                                                                 className: "w-5 h-5 text-green-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 188,
+                                                                lineNumber: 182,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -652,13 +646,13 @@ const ContactsPage = ()=>{
                                                                 children: "Персональную стратегию продвижения"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 189,
+                                                                lineNumber: 183,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 187,
+                                                        lineNumber: 181,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -668,7 +662,7 @@ const ContactsPage = ()=>{
                                                                 className: "w-5 h-5 text-green-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 192,
+                                                                lineNumber: 186,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -676,31 +670,31 @@ const ContactsPage = ()=>{
                                                                 children: "Прогноз роста клиентов и выручки"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                lineNumber: 193,
+                                                                lineNumber: 187,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                        lineNumber: 191,
+                                                        lineNumber: 185,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 178,
+                                                lineNumber: 172,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 170,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 112,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -712,7 +706,7 @@ const ContactsPage = ()=>{
                                             children: "Получить бесплатный аудит"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 196,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -720,7 +714,7 @@ const ContactsPage = ()=>{
                                             children: "Заполните форму, и мы проанализируем ваше присутствие в картах"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 197,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         isSubmitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -730,7 +724,7 @@ const ContactsPage = ()=>{
                                                     className: "w-16 h-16 text-green-500 mx-auto mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 207,
+                                                    lineNumber: 201,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -738,7 +732,7 @@ const ContactsPage = ()=>{
                                                     children: "Заявка отправлена!"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 208,
+                                                    lineNumber: 202,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -746,13 +740,13 @@ const ContactsPage = ()=>{
                                                     children: "Мы свяжемся с вами в течение 15 минут"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 209,
+                                                    lineNumber: 203,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                            lineNumber: 206,
+                                            lineNumber: 200,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                             onSubmit: handleSubmit,
@@ -761,103 +755,32 @@ const ContactsPage = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            htmlFor: "name",
+                                                            htmlFor: "phone",
                                                             className: "block text-sm font-semibold text-gray-900 mb-2",
-                                                            children: "Ваше имя *"
+                                                            children: "Телефон *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 214,
+                                                            lineNumber: 208,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                            type: "text",
-                                                            id: "name",
-                                                            name: "name",
+                                                            type: "tel",
+                                                            id: "phone",
+                                                            name: "phone",
                                                             required: true,
-                                                            value: formData.name,
+                                                            value: formData.phone,
                                                             onChange: handleInputChange,
                                                             className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors",
-                                                            placeholder: "Как к вам обращаться?"
+                                                            placeholder: "+7 (___) ___-__-__"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 217,
+                                                            lineNumber: 211,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 213,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "grid grid-cols-1 md:grid-cols-2 gap-6",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                    htmlFor: "email",
-                                                                    className: "block text-sm font-semibold text-gray-900 mb-2",
-                                                                    children: "Email *"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 231,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                                    type: "email",
-                                                                    id: "email",
-                                                                    name: "email",
-                                                                    required: true,
-                                                                    value: formData.email,
-                                                                    onChange: handleInputChange,
-                                                                    className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors",
-                                                                    placeholder: "Ваш email"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 234,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 230,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                    htmlFor: "phone",
-                                                                    className: "block text-sm font-semibold text-gray-900 mb-2",
-                                                                    children: "Телефон *"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 247,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                                    type: "tel",
-                                                                    id: "phone",
-                                                                    name: "phone",
-                                                                    required: true,
-                                                                    value: formData.phone,
-                                                                    onChange: handleInputChange,
-                                                                    className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors",
-                                                                    placeholder: "+7 (___) ___-__-__"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 250,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 246,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 207,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -865,30 +788,29 @@ const ContactsPage = ()=>{
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                             htmlFor: "business",
                                                             className: "block text-sm font-semibold text-gray-900 mb-2",
-                                                            children: "Название бизнеса *"
+                                                            children: "Название бизнеса"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 264,
+                                                            lineNumber: 224,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                             type: "text",
                                                             id: "business",
                                                             name: "business",
-                                                            required: true,
                                                             value: formData.business,
                                                             onChange: handleInputChange,
                                                             className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors",
-                                                            placeholder: "Название вашей компании"
+                                                            placeholder: "Название вашей компании (необязательно)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 267,
+                                                            lineNumber: 227,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 223,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -899,7 +821,7 @@ const ContactsPage = ()=>{
                                                             children: "Интересующая услуга"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 280,
+                                                            lineNumber: 239,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -914,7 +836,7 @@ const ContactsPage = ()=>{
                                                                     children: "Выберите услугу"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 290,
+                                                                    lineNumber: 249,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -922,7 +844,7 @@ const ContactsPage = ()=>{
                                                                     children: "Продвижение в Яндекс.Картах"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 291,
+                                                                    lineNumber: 250,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -930,7 +852,7 @@ const ContactsPage = ()=>{
                                                                     children: "Продвижение в 2ГИС"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 292,
+                                                                    lineNumber: 251,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -938,7 +860,7 @@ const ContactsPage = ()=>{
                                                                     children: "Яндекс.Услуги"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 293,
+                                                                    lineNumber: 252,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -946,7 +868,7 @@ const ContactsPage = ()=>{
                                                                     children: "Управление репутацией"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 294,
+                                                                    lineNumber: 253,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -954,7 +876,7 @@ const ContactsPage = ()=>{
                                                                     children: "Комплексное продвижение"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 295,
+                                                                    lineNumber: 254,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -962,19 +884,19 @@ const ContactsPage = ()=>{
                                                                     children: "Только аудит"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 296,
+                                                                    lineNumber: 255,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 283,
+                                                            lineNumber: 242,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 279,
+                                                    lineNumber: 238,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -985,7 +907,7 @@ const ContactsPage = ()=>{
                                                             children: "Дополнительная информация"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 301,
+                                                            lineNumber: 260,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -998,13 +920,13 @@ const ContactsPage = ()=>{
                                                             placeholder: "Расскажите о вашем бизнесе, целях, текущих проблемах..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 304,
+                                                            lineNumber: 263,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 300,
+                                                    lineNumber: 259,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1019,7 +941,7 @@ const ContactsPage = ()=>{
                                                             required: true
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 316,
+                                                            lineNumber: 275,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1036,19 +958,19 @@ const ContactsPage = ()=>{
                                                                     children: "политикой конфиденциальности"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                                    lineNumber: 326,
+                                                                    lineNumber: 285,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 324,
+                                                            lineNumber: 283,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 315,
+                                                    lineNumber: 274,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 agreeError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1056,59 +978,59 @@ const ContactsPage = ()=>{
                                                     children: agreeError
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 331,
+                                                    lineNumber: 290,
                                                     columnNumber: 36
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     type: "submit",
-                                                    className: `w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center shadow-lg transition-opacity ${!agree || !formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.business.trim() ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700'}`,
-                                                    disabled: !(agree && formData.name.trim() && formData.email.trim() && formData.phone.trim() && formData.business.trim()),
+                                                    className: `w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center shadow-lg transition-opacity ${!agree || !formData.phone.trim() ? 'opacity-60 cursor-not-allowed' : 'hover:bg-blue-700'}`,
+                                                    disabled: !(agree && formData.phone.trim()),
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                             className: "w-5 h-5 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 296,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Получить бесплатный аудит"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                    lineNumber: 332,
+                                                    lineNumber: 291,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                            lineNumber: 212,
+                                            lineNumber: 206,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 195,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                lineNumber: 200,
+                                lineNumber: 194,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                        lineNumber: 110,
+                        lineNumber: 104,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                    lineNumber: 109,
+                    lineNumber: 103,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 108,
+                lineNumber: 102,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1127,7 +1049,7 @@ const ContactsPage = ()=>{
                                     children: "Часто задаваемые вопросы"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 352,
+                                    lineNumber: 311,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1135,13 +1057,13 @@ const ContactsPage = ()=>{
                                     children: "Ответы на популярные вопросы о локальном продвижении"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 353,
+                                    lineNumber: 312,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 351,
+                            lineNumber: 310,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1157,7 +1079,7 @@ const ContactsPage = ()=>{
                                                 children: "Сколько времени занимает продвижение в картах?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 317,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1165,18 +1087,18 @@ const ContactsPage = ()=>{
                                                 children: "Первые результаты видны уже через 7-14 дней после начала работ. Полный эффект достигается за 1-2 месяца. Скорость зависит от конкурентности ниши и текущего состояния карточек."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 359,
+                                                lineNumber: 318,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 316,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 315,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1189,7 +1111,7 @@ const ContactsPage = ()=>{
                                                 children: "Гарантируете ли вы результат?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 323,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1197,18 +1119,18 @@ const ContactsPage = ()=>{
                                                 children: "Да, мы даем гарантию результата. Если в течение 3 месяцев не достигнем обещанных показателей — вернем деньги или доработаем бесплатно до получения результата."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 365,
+                                                lineNumber: 324,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 363,
+                                        lineNumber: 322,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 362,
+                                    lineNumber: 321,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1221,7 +1143,7 @@ const ContactsPage = ()=>{
                                                 children: "Работаете ли вы с регионами?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 370,
+                                                lineNumber: 329,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1229,18 +1151,18 @@ const ContactsPage = ()=>{
                                                 children: "Да, мы работаем по всей России. Все процессы автоматизированы, поэтому география не влияет на качество услуг. У нас есть успешные кейсы в более чем 50 городах России."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 371,
+                                                lineNumber: 330,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 369,
+                                        lineNumber: 328,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 368,
+                                    lineNumber: 327,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1253,7 +1175,7 @@ const ContactsPage = ()=>{
                                                 children: "Сколько стоят ваши услуги?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 376,
+                                                lineNumber: 335,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1261,18 +1183,18 @@ const ContactsPage = ()=>{
                                                 children: "Стоимость зависит от объема работ и количества площадок для продвижения. Стартовый пакет — от 15 000 рублей в месяц. Точную стоимость рассчитаем после аудита вашего бизнеса."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 377,
+                                                lineNumber: 336,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 375,
+                                        lineNumber: 334,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 374,
+                                    lineNumber: 333,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1285,7 +1207,7 @@ const ContactsPage = ()=>{
                                                 children: "Что включает бесплатный аудит?"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 382,
+                                                lineNumber: 341,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1293,35 +1215,35 @@ const ContactsPage = ()=>{
                                                 children: "Анализ текущего присутствия в картах, оценку конкурентов, выявление проблем и возможностей роста, прогноз увеличения клиентов и персональные рекомендации по продвижению."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                                lineNumber: 383,
+                                                lineNumber: 342,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                        lineNumber: 381,
+                                        lineNumber: 340,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 380,
+                                    lineNumber: 339,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 355,
+                            lineNumber: 314,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                    lineNumber: 350,
+                    lineNumber: 309,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 349,
+                lineNumber: 308,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1330,12 +1252,12 @@ const ContactsPage = ()=>{
                     className: "h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"
                 }, void 0, false, {
                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                    lineNumber: 392,
+                    lineNumber: 351,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 391,
+                lineNumber: 350,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1351,7 +1273,7 @@ const ContactsPage = ()=>{
                             children: "Готовы увеличить поток клиентов?"
                         }, void 0, false, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 398,
+                            lineNumber: 357,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1359,7 +1281,7 @@ const ContactsPage = ()=>{
                             children: "Получите бесплатный аудит вашего присутствия в картах и персональную стратегию продвижения"
                         }, void 0, false, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 399,
+                            lineNumber: 358,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1374,13 +1296,13 @@ const ContactsPage = ()=>{
                                             className: "ml-2 w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 364,
                                             columnNumber: 40
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 401,
+                                    lineNumber: 360,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1389,24 +1311,24 @@ const ContactsPage = ()=>{
                                     children: "Позвонить сейчас"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                                    lineNumber: 407,
+                                    lineNumber: 366,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                            lineNumber: 400,
+                            lineNumber: 359,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                    lineNumber: 397,
+                    lineNumber: 356,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 396,
+                lineNumber: 355,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1416,26 +1338,26 @@ const ContactsPage = ()=>{
                         className: "h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                        lineNumber: 419,
+                        lineNumber: 378,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "h-4 bg-gradient-to-b from-gray-900 to-slate-900"
                     }, void 0, false, {
                         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                        lineNumber: 420,
+                        lineNumber: 379,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-                lineNumber: 418,
+                lineNumber: 377,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/zakazat-prodvizhenie-v-kartakh/page.tsx",
-        lineNumber: 73,
+        lineNumber: 67,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

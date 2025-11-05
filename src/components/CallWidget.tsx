@@ -6,7 +6,7 @@ const CallWidget: React.FC = () => {
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
   return (
     <a
-      href="tel:+79635006321"
+      href="tel:+79935006321"
       className="fixed right-6 bottom-6 md:right-8 md:bottom-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group call-glow"
       title="Позвонить сейчас"
       style={{ 

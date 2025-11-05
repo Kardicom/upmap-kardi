@@ -1480,7 +1480,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const CallWidget = ()=>{
     const isMobile = ("TURBOPACK compile-time value", "object") !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-        href: "tel:+79635006321",
+        href: "tel:+79935006321",
         className: "fixed right-6 bottom-6 md:right-8 md:bottom-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center w-16 h-16 md:w-20 md:h-20 transition-all duration-300 group call-glow",
         title: "Позвонить сейчас",
         style: {
@@ -1562,7 +1562,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user.js [app-client] (ecmascript) <export default as User>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/building.js [app-client] (ecmascript) <export default as Building>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$package$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Package$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/package.js [app-client] (ecmascript) <export default as Package>");
@@ -1578,7 +1577,6 @@ const OrderModal = ()=>{
     const { isModalOpen, selectedTariff, closeModal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModalContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useOrderModal"])();
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         phone: '',
-        name: '',
         company: ''
     });
     const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
@@ -1592,7 +1590,6 @@ const OrderModal = ()=>{
                 setShowSuccess(false);
                 setFormData({
                     phone: '',
-                    name: '',
                     company: ''
                 });
                 setErrors({});
@@ -1608,20 +1605,16 @@ const OrderModal = ()=>{
         } else if (!/^[\+]?[0-9\s\-\(\)]{10,}$/.test(formData.phone.trim())) {
             newErrors.phone = 'Введите корректный номер телефона';
         }
-        if (!formData.name.trim()) {
-            newErrors.name = 'Имя обязательно для заполнения';
-        }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
     const sendToServer = async (data)=>{
         const payload = {
-            name: data.name,
             phone: data.phone,
             company: data.company || 'Не указана',
             selectedPackage: selectedTariff || '',
             subject: `Новая заявка с сайта UPMAP${selectedTariff ? ` - ${selectedTariff}` : ''}`,
-            message: `Новая заявка с сайта UPMAP\nИмя: ${data.name}\nТелефон: ${data.phone}\nКомпания: ${data.company || 'Не указана'}${selectedTariff ? `\nПакет: ${selectedTariff}` : ''}\nДата: ${new Date().toLocaleString('ru-RU')}\nИсточник: Сайт UPMAP`
+            message: `Новая заявка с сайта UPMAP\nТелефон: ${data.phone}\nКомпания: ${data.company || 'Не указана'}${selectedTariff ? `\nПакет: ${selectedTariff}` : ''}\nДата: ${new Date().toLocaleString('ru-RU')}\nИсточник: Сайт UPMAP`
         };
         // TODO: Подключить реальный API
         console.log('Sending data:', payload);
@@ -1645,7 +1638,6 @@ const OrderModal = ()=>{
             setTimeout(()=>{
                 setFormData({
                     phone: '',
-                    name: '',
                     company: ''
                 });
                 setErrors({});
@@ -1692,12 +1684,12 @@ const OrderModal = ()=>{
                             className: "w-8 h-8 text-green-500"
                         }, void 0, false, {
                             fileName: "[project]/src/components/OrderModal.tsx",
-                            lineNumber: 122,
+                            lineNumber: 115,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 121,
+                        lineNumber: 114,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1705,7 +1697,7 @@ const OrderModal = ()=>{
                         children: "Заявка отправлена!"
                     }, void 0, false, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 124,
+                        lineNumber: 117,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1717,7 +1709,7 @@ const OrderModal = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 127,
+                        lineNumber: 120,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1729,30 +1721,30 @@ const OrderModal = ()=>{
                                     children: "Что дальше?"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 126,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 126,
                                     columnNumber: 45
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Наш менеджер позвонит вам в течение 15 минут для уточнения деталей и составления персонального предложения."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/OrderModal.tsx",
-                            lineNumber: 132,
+                            lineNumber: 125,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 131,
+                        lineNumber: 124,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/OrderModal.tsx",
-                lineNumber: 120,
+                lineNumber: 113,
                 columnNumber: 11
             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
@@ -1764,7 +1756,7 @@ const OrderModal = ()=>{
                                 children: selectedTariff ? `Заказать пакет "${selectedTariff}"` : 'Заказать услугу'
                             }, void 0, false, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 142,
+                                lineNumber: 135,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1775,18 +1767,18 @@ const OrderModal = ()=>{
                                     size: 20
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 143,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 145,
+                                lineNumber: 138,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 141,
+                        lineNumber: 134,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     selectedTariff && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1800,7 +1792,7 @@ const OrderModal = ()=>{
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 151,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1811,23 +1803,23 @@ const OrderModal = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 152,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 157,
+                                lineNumber: 150,
                                 columnNumber: 19
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/OrderModal.tsx",
-                            lineNumber: 156,
+                            lineNumber: 149,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 155,
+                        lineNumber: 148,
                         columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1846,7 +1838,7 @@ const OrderModal = ()=>{
                                                     size: 16
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 162,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Телефон ",
@@ -1855,18 +1847,18 @@ const OrderModal = ()=>{
                                                     children: "*"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 163,
                                                     columnNumber: 29
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/OrderModal.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 161,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 160,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1879,7 +1871,7 @@ const OrderModal = ()=>{
                                         disabled: isSubmitting
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 166,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     errors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1887,75 +1879,13 @@ const OrderModal = ()=>{
                                         children: errors.phone
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 178,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 166,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        htmlFor: "name",
-                                        className: "block text-sm font-medium text-gray-700 mb-2",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
-                                                    size: 16
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/OrderModal.tsx",
-                                                    lineNumber: 192,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                "Имя клиента ",
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-red-500",
-                                                    children: "*"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/OrderModal.tsx",
-                                                    lineNumber: 193,
-                                                    columnNumber: 33
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/OrderModal.tsx",
-                                            lineNumber: 191,
-                                            columnNumber: 19
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 190,
-                                        columnNumber: 17
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "text",
-                                        id: "name",
-                                        value: formData.name,
-                                        onChange: (e)=>handleInputChange('name', e.target.value),
-                                        className: `w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors ${errors.name ? 'border-red-500 bg-red-50' : 'border-gray-300'}`,
-                                        placeholder: "Введите ваше имя",
-                                        disabled: isSubmitting
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 196,
-                                        columnNumber: 17
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    errors.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-2 text-sm text-red-600",
-                                        children: errors.name
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 208,
-                                        columnNumber: 19
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 189,
+                                lineNumber: 159,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1970,19 +1900,19 @@ const OrderModal = ()=>{
                                                     size: 16
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/OrderModal.tsx",
-                                                    lineNumber: 215,
+                                                    lineNumber: 185,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 "Наименование компании"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/OrderModal.tsx",
-                                            lineNumber: 214,
+                                            lineNumber: 184,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 183,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1995,13 +1925,13 @@ const OrderModal = ()=>{
                                         disabled: isSubmitting
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 189,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 212,
+                                lineNumber: 182,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2017,7 +1947,7 @@ const OrderModal = ()=>{
                                         disabled: isSubmitting
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 201,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2034,19 +1964,19 @@ const OrderModal = ()=>{
                                                 children: "политикой конфиденциальности"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                                lineNumber: 242,
+                                                lineNumber: 212,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 240,
+                                        lineNumber: 210,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 230,
+                                lineNumber: 200,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             agreeError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2054,7 +1984,7 @@ const OrderModal = ()=>{
                                 children: agreeError
                             }, void 0, false, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 247,
+                                lineNumber: 217,
                                 columnNumber: 30
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2068,45 +1998,45 @@ const OrderModal = ()=>{
                                         children: "Отмена"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 250,
+                                        lineNumber: 220,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "submit",
-                                        disabled: isSubmitting || !agree || !formData.phone.trim() || !formData.name.trim(),
-                                        className: `flex-1 px-4 py-3 rounded-lg font-medium shadow-lg transition-opacity ${isSubmitting || !agree || !formData.phone.trim() || !formData.name.trim() ? 'bg-amber-500 text-white opacity-60 cursor-not-allowed' : 'bg-amber-500 text-white hover:bg-amber-600'}`,
+                                        disabled: isSubmitting || !agree || !formData.phone.trim(),
+                                        className: `flex-1 px-4 py-3 rounded-lg font-medium shadow-lg transition-opacity ${isSubmitting || !agree || !formData.phone.trim() ? 'bg-amber-500 text-white opacity-60 cursor-not-allowed' : 'bg-amber-500 text-white hover:bg-amber-600'}`,
                                         children: "Отправить заявку"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/OrderModal.tsx",
-                                        lineNumber: 258,
+                                        lineNumber: 228,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/OrderModal.tsx",
-                                lineNumber: 249,
+                                lineNumber: 219,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/OrderModal.tsx",
-                        lineNumber: 165,
+                        lineNumber: 158,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true)
         }, void 0, false, {
             fileName: "[project]/src/components/OrderModal.tsx",
-            lineNumber: 118,
+            lineNumber: 111,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/OrderModal.tsx",
-        lineNumber: 114,
+        lineNumber: 107,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(OrderModal, "QKGTxUpml4EO7ZO/h4XwGqCrB9E=", false, function() {
+_s(OrderModal, "Ubl80yOdzTha1up3gKuWlHmxlcA=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$contexts$2f$OrderModalContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useOrderModal"]
     ];
