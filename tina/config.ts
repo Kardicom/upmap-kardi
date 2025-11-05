@@ -213,6 +213,47 @@ export default defineConfig({
                   },
                 ],
               },
+              {
+                name: "ImageRow",
+                label: "🖼️ Галерея в ряд",
+                fields: [
+                  {
+                    name: "columns",
+                    label: "Кол-во колонок (desktop)",
+                    type: "string",
+                    options: [
+                      { label: "2", value: "2" },
+                      { label: "3", value: "3" },
+                    ],
+                  },
+                  {
+                    name: "images",
+                    label: "Изображения",
+                    type: "object",
+                    list: true,
+                    required: true,
+                    fields: [
+                      {
+                        name: "src",
+                        label: "Файл",
+                        type: "image",
+                        required: true,
+                      },
+                      {
+                        name: "alt",
+                        label: "Alt-текст",
+                        type: "string",
+                        required: true,
+                      },
+                      {
+                        name: "caption",
+                        label: "Подпись (опционально)",
+                        type: "string",
+                      },
+                    ],
+                  },
+                ],
+              },
             ],
           },
         ],

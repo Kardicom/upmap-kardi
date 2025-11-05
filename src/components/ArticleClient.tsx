@@ -3,6 +3,7 @@
 import React from "react";
 import CtaBlock from "./CtaBlock";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import TableWithMenu from "./TableWithMenu";
 
 // Функция для создания ID из текста (якоря)
 const createSlug = (text: string) => {
@@ -68,6 +69,16 @@ const tinaComponents = {
   ),
   img: (props: any) => <img className="rounded-lg shadow-lg my-6" {...props} />,
   u: (props: any) => <u {...props} />, // Добавляем поддержку подчеркивания
+  table: (props: any) => <TableWithMenu {...props} />,
+  thead: (props: any) => <thead className="bg-slate-50" {...props} />,
+  tbody: (props: any) => <tbody className="divide-y divide-slate-200" {...props} />,
+  th: (props: any) => (
+    <th className="border border-slate-200 px-4 py-3 text-left font-semibold text-slate-700" {...props} />
+  ),
+  td: (props: any) => (
+    <td className="border border-slate-200 px-4 py-3 text-slate-700 align-top" {...props} />
+  ),
+  tr: (props: any) => <tr className="odd:bg-white even:bg-slate-50" {...props} />,
   
   // Кастомные компоненты для красивого оформления
   ChecklistBlock: ({ children }: any) => (
@@ -105,6 +116,34 @@ const tinaComponents = {
       <div className="text-purple-900 mt-2">{children}</div>
     </div>
   ),
+
+  ImageRow: ({ images = [], columns = "2" }: any) => {
+    if (!Array.isArray(images) || images.length === 0) {
+      return null;
+    }
+
+    const columnClass = columns === "3" ? "md:grid-cols-3" : "md:grid-cols-2";
+
+    return (
+      <div className={`not-prose grid gap-4 ${columnClass}`}>
+        {images.map((image: any, index: number) => (
+          <figure key={index} className="flex flex-col gap-2">
+            {image?.src && (
+              <img
+                src={image.src}
+                alt={image?.alt || ""}
+                className="w-full rounded-lg shadow-md object-cover"
+                loading="lazy"
+              />
+            )}
+            {image?.caption && (
+              <figcaption className="text-sm text-slate-500">{image.caption}</figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    );
+  },
   
   QuoteBox: ({ children, author }: any) => (
     <div className="bg-gray-50 border-l-4 border-gray-400 p-6 rounded-r-lg my-6 italic">
