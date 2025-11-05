@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Projectreact/upmap-nextjs/src/app/kejsy-prodvizheniya-yandeks-karty/layout.tsx"],"sourcesContent":["import { Metadata } from 'next';\r\n\r\nexport const metadata: Metadata = {\r\n  title: 'Кейсы и результаты продвижения в Яндекс.Картах, 2ГИС | UPMAP',\r\n  description: 'Посмотрите реальные кейсы и результаты продвижения бизнеса в Яндекс.Картах, 2ГИС от UPMAP.',\r\n};\r\n\r\nexport default function GalleryLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return children;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,cAAc,EACpC,QAAQ,EAGT;IACC,OAAO;AACT","debugId":null}}]
-}

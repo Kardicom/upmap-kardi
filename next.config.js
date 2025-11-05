@@ -2,8 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['upmap.ru'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'upmap.ru',
+      },
+    ],
   },
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js', 'mdx'],
 }
 
 module.exports = nextConfig

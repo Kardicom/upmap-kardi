@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog-prodvizhenie-karty-seo/prodvigenie-yandex-maps-2gis-google-maps":{},"/blog-prodvizhenie-karty-seo/kak-udalit-otzyv-yandex-maps":{},"/blog-prodvizhenie-karty-seo/otzyvy-na-yandeks-kartah-polnoe-rukovodstvo":{}},"dynamicRoutes":{"/blog-prodvizhenie-karty-seo/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog-prodvizhenie-karty-seo/[slug]","routeRegex":"^\\/blog\\-prodvizhenie\\-karty\\-seo\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"ad43c1a68587b3838a24aa5cacc2416b","previewModeSigningKey":"a549d96c46c8bb1981dfb5ac96ba965e4cbe175e3028245f810a6336c9561d12","previewModeEncryptionKey":"9ac251125700e4a8d24161154bbbdbf56e9a8053c04944e7ebea02fa79149027"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "c10d908612716cc60195cdb2e3471524",
+    "previewModeSigningKey": "5cd5dbba259936e12f6e9f8f8acd862fe2d0b6e5a88aa080e3ec5d7109b71a3c",
+    "previewModeEncryptionKey": "19ba9af7124ecb927077ddc23c380047d331ab965c72e34b2718345e81483f52"
+  }
+}

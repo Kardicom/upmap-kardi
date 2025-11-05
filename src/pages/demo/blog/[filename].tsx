@@ -55,6 +55,11 @@ const BlogPage = (props) => {
 
 export const getStaticProps = async ({ params }) => {
   let data = {}
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      notFound: true,
+    }
+  }
   let query = {}
   let variables = { relativePath: `${params.filename}.md` }
   try {
@@ -77,6 +82,12 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      paths: [],
+      fallback: false,
+    }
+  }
   const postsListData = await client.queries.postConnection()
 
   return {

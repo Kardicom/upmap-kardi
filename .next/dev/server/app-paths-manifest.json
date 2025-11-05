@@ -1,7 +1,4 @@
 {
-  "/blog-prodvizhenie-karty-seo/[slug]/page": "app/blog-prodvizhenie-karty-seo/[slug]/page.js",
   "/blog-prodvizhenie-karty-seo/page": "app/blog-prodvizhenie-karty-seo/page.js",
-  "/page": "app/page.js",
-  "/tarify-prodvizheniya-v-kartakh/page": "app/tarify-prodvizheniya-v-kartakh/page.js",
   "/zakazat-prodvizhenie-v-kartakh/page": "app/zakazat-prodvizhenie-v-kartakh/page.js"
 }
