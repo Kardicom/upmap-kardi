@@ -7,6 +7,8 @@ import { AnimatedNumber } from '@/components/AnimatedNumber';
 import QuizBlock from '@/components/QuizBlock';
 import { useOrderModal } from '@/contexts/OrderModalContext';
 
+// Мета-теги определены в layout.tsx
+
 export default function HomePage() {
   const { openModal } = useOrderModal();
 
